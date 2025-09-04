@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Github, ExternalLink, Filter } from "lucide-react";
+import { Github, ExternalLink, Filter, Plus } from "lucide-react";
 import { useApi } from "../hooks/useApi";
 import { Project } from "../types";
+import DynamicModal from "./DynamicModal";
 
 const Projects = () => {
-  const { data: projects, loading } = useApi<Project[]>("/projects");
+  const { data: projects, loading, refetch } = useApi<Project[]>("/projects");
   const [filter, setFilter] = useState<string>("All");
+  const [showModal, setShowModal] = useState(false);
 
   const categories = ["All", "Web App", "Full Stack", "API", "Mobile"];
 
@@ -16,7 +18,9 @@ const Projects = () => {
     ) || [];
 
   return (
-    <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-800">
+    <section
+      id="projects"
+      className="py-20 bg-gray-50 dark:bg-gray-800 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -32,6 +36,15 @@ const Projects = () => {
             AI-powered solutions
           </p>
         </motion.div>
+
+        {/* Add Project Button */}
+        <motion.button
+          onClick={() => setShowModal(true)}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="fixed top-24 right-6 bg-gradient-to-r from-blue-600 to-purple-600 text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 z-40">
+          <Plus className="w-6 h-6" />
+        </motion.button>
 
         {/* Filter Buttons */}
         <motion.div
@@ -183,6 +196,13 @@ const Projects = () => {
           </motion.button>
         </motion.div>
       </div>
+
+      <DynamicModal
+        isOpen={showModal}
+        onClose={() => setShowModal(false)}
+        type="project"
+        onSuccess={refetch}
+      />
     </section>
   );
 };

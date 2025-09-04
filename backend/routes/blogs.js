@@ -75,13 +75,31 @@ router.post(
   upload.single("image"),
   async (req, res) => {
     try {
-      const blogData = {
-        ...req.body,
-        tags: JSON.parse(req.body.tags || "[]"),
-        image: req.file ? req.file.path : req.body.image,
-        published: req.body.published === "true",
-        publishedAt: req.body.published === "true" ? new Date() : null,
-      };
+
+      let tags = req.body.tags;
+
+      if (Array.isArray(tags)) {
+        // Already array from frontend
+      } else if (typeof tags === "string") {
+        try {
+          tags = JSON.parse(tags); // In case frontend sends a JSON string
+        } catch {
+          tags = tags.split(",").map((t) => t.trim());
+        }
+      } else {
+        tags = [];
+      }
+      
+const blogData = {
+  ...req.body,
+  tags,
+  image: req.file ? req.file.path : req.body.image,
+  published: req.body.published === "true" || req.body.published === true,
+  publishedAt:
+    req.body.published === "true" || req.body.published === true
+      ? new Date()
+      : null,
+};
 
       const blog = new Blog(blogData);
       await blog.save();

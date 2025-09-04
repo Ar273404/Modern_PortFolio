@@ -39,8 +39,8 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            Arun Kumar
+            className="text-2xl font-bold bg-gradient-to-r from-yellow-600 to-purple-600 bg-clip-text text-transparent">
+            MyPortFolio👇👇👇
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -54,26 +54,35 @@ const Navbar = () => {
                 {item.label}
               </motion.a>
             ))}
-
             <div className="flex items-center space-x-4">
+              {/* Admin Button */}
               <motion.a
-                href="https://github.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.1 }}
-                className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-                <Github className="w-5 h-5" />
+                href="http://localhost:5173/admin"
+                whileHover={{ scale: 1.05, x: 5 }}
+                whileTap={{ scale: 0.95 }}
+                className="flex items-center space-x-2 bg-gradient-to-r from-purple-600 to-pink-600 
+      text-white px-4 py-2 rounded-full font-medium shadow-lg hover:shadow-xl 
+      transition-all duration-300">
+                <span>Admin</span>
+                <motion.div
+                  animate={{ x: [0, 5, 0] }}
+                  transition={{ repeat: Infinity, duration: 1.2 }}>
+                  <svg
+                    className="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={2.5}
+                    viewBox="0 0 24 24">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </motion.div>
               </motion.a>
 
-              <motion.a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.1 }}
-                className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-                <Linkedin className="w-5 h-5" />
-              </motion.a>
-
+              {/* Dark Mode Toggle */}
               <motion.button
                 onClick={toggleTheme}
                 whileHover={{ scale: 1.1 }}
@@ -137,22 +146,32 @@ const Navbar = () => {
                 </motion.a>
               ))}
 
-              <div className="flex items-center space-x-4 pt-4 border-t dark:border-gray-800">
-                <a
-                  href="https://github.com"
-                  target="_blank"
-                  rel="noopener noreferrer">
-                  <Github className="w-5 h-5" />
-                </a>
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer">
-                  <Linkedin className="w-5 h-5" />
-                </a>
-                <a href="mailto:arun@example.com">
-                  <Mail className="w-5 h-5" />
-                </a>
+              <div className="flex items-center space-x-4 pt-4 border-t-2 dark:border-gray-800">
+                <motion.a
+                  href="http://localhost:5173/admin"
+                  whileHover={{ scale: 1.05, x: 5 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="flex items-center space-x-2 bg-gradient-to-r from-purple-600 to-pink-600 
+      text-white px-4 py-2 rounded-full font-medium shadow-lg hover:shadow-xl 
+      transition-all duration-300">
+                  <span>Admin</span>
+                  <motion.div
+                    animate={{ x: [0, 5, 0] }}
+                    transition={{ repeat: Infinity, duration: 1.2 }}>
+                    <svg
+                      className="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth={2.5}
+                      viewBox="0 0 24 24">
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </motion.div>
+                </motion.a>
               </div>
             </div>
           </motion.div>

@@ -4,6 +4,7 @@ import { Code, Zap, Users, Award, Calendar, MapPin, Plus } from "lucide-react";
 import LiveActivity from "./LiveActivity";
 import DynamicModal from "./DynamicModal";
 import { useApi } from "../hooks/useApi";
+import profileImg from  '../public/Image/Phtot1.png'
 
 type JourneyItem = {
   type: "work" | "education";
@@ -85,7 +86,7 @@ const About = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
           className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             About Me
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-8"></div>
@@ -99,52 +100,65 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
             className="lg:col-span-2">
-            <div className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 rounded-2xl p-8 shadow-xl border border-gray-100 dark:border-gray-700">
+            {/* <div className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 rounded-2xl p-8 shadow-xl border border-gray-100 dark:border-gray-700">
               <div className="flex flex-col md:flex-row items-start space-y-6 md:space-y-0 md:space-x-8">
-                <motion.div
-                  whileHover={{ scale: 1.05, rotate: 2 }}
-                  className="w-48 h-48 rounded-2xl overflow-hidden shadow-2xl flex-shrink-0">
-                  <img
-                    src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg"
-                    alt="Arun Kumar - Professional Headshot"
-                    className="w-full h-full object-cover"
-                  />
-                </motion.div>
-
                 <div className="flex-1">
+                  <motion.div
+                    whileHover={{ scale: 1.05, rotate: 2 }}
+                    className="w-48 h-48 rounded-2xl overflow-hidden shadow-2xl flex-shrink-0">
+                    <img
+                      src={profileImg}
+                      alt="Arun Yadav - Professional Headshot"
+                      className="w-full h-full object-cover"
+                    />
+                  </motion.div>
                   <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
                     Passionate Developer & AI Enthusiast
                   </h3>
 
                   <div className="space-y-4 text-gray-600 dark:text-gray-400">
                     <p>
-                      I'm a dedicated Full Stack Developer with expertise in the
-                      MERN stack, currently working as an AI Training Specialist
-                      at Outlier AI. My journey in technology began with a
-                      curiosity about how things work, which evolved into a
-                      passion for building scalable web applications.
+                      I'm a passionate <b>Full Stack Developer</b> with strong
+                      expertise in the
+                      <b>MERN stack</b> and experience building scalable web
+                      applications. Currently, I work as an{" "}
+                      <b>AI Training Specialist</b> at Outlier AI, where I train
+                      models in{" "}
+                      <b>
+                        Mathematics, Science, STEM, Hindi, Coding (C/C++, Full
+                        Stack)
+                      </b>{" "}
+                      while applying my problem-solving mindset to real-world AI
+                      development.
                     </p>
 
                     <p>
-                      With over 3 years of experience in web development, I've
-                      worked on diverse projects ranging from e-commerce
-                      platforms to AI-powered applications. I believe in writing
-                      clean, maintainable code and creating user experiences
-                      that make a difference.
+                      Over the past few years, I've worked on diverse projects
+                      including a<b>Job Seeking & Hiring Platform</b>, an{" "}
+                      <b>AI-powered Resume Shortlister</b>, a{" "}
+                      <b>Video Progress Tracker</b>, and a{" "}
+                      <b>Hospital Management System</b>. My focus has always
+                      been on writing clean, maintainable code while delivering
+                      impactful and user-friendly solutions.
                     </p>
 
                     <p>
-                      When I'm not coding, you'll find me exploring new
-                      technologies, contributing to open source projects, or
-                      sharing my knowledge through technical blogs and mentoring
-                      aspiring developers.
+                      Beyond coding, I love exploring <b>new technologies</b>{" "}
+                      like Next.js, LangChain, and cloud platforms. With a
+                      strong <b>continuous learning attitude</b>, I focus on
+                      improving my <b>DSA, system design</b>, and mentoring
+                      others in programming. My long-term goal is to build
+                      impactful <b>AI-driven SaaS products</b> that solve
+                      real-world challenges in{" "}
+                      <b>education, healthcare, and employment</b>, while
+                      guiding future developers.
                     </p>
                   </div>
 
                   <div className="flex items-center space-x-6 mt-6 text-sm text-gray-500 dark:text-gray-400">
                     <div className="flex items-center space-x-2">
                       <MapPin className="w-4 h-4" />
-                      <span>Bangalore, India</span>
+                      <span>Gorakhpur, India - 273010</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <Calendar className="w-4 h-4" />
@@ -165,8 +179,8 @@ const About = () => {
                       "Node.js",
                       "MongoDB",
                       "AWS",
-                      "Python",
-                      "AI/ML",
+                      "C/C++",
+                      "Java",
                     ].map((tech) => (
                       <motion.span
                         key={tech}
@@ -177,6 +191,104 @@ const About = () => {
                     ))}
                   </motion.div>
                 </div>
+              </div>
+            </div> */}
+            <div className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 rounded-2xl p-8 shadow-xl border border-gray-100 dark:border-gray-700">
+              <div className="relative">
+                {/* Image floats left */}
+                <motion.div
+                  whileHover={{ scale: 1.05, rotate: 2 }}
+                  className="w-48 h-48 rounded-2xl overflow-hidden shadow-2xl float-left mr-6 mb-4">
+                  <img
+                    src={profileImg}
+                    alt="Arun Yadav - Professional Headshot"
+                    className="w-full h-full object-cover"
+                  />
+                </motion.div>
+
+                {/* Text will wrap around image */}
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                  Passionate Developer & AI Enthusiast
+                </h3>
+
+                <div className="space-y-4 text-gray-600 dark:text-gray-400">
+                  <p>
+                    I'm a passionate <b>Full Stack Developer</b> with strong
+                    expertise in the <b>MERN stack</b> and experience building
+                    scalable web applications. Currently, I work as an{" "}
+                    <b>AI Training Specialist</b> at Outlier AI, where I train
+                    models in{" "}
+                    <b>
+                      Mathematics, Science, STEM, Hindi, Coding (C/C++, Full
+                      Stack)
+                    </b>{" "}
+                    while applying my problem-solving mindset to real-world AI
+                    development.
+                  </p>
+
+                  <p>
+                    Over the past few years, I've worked on diverse projects
+                    including a<b> Job Seeking & Hiring Platform</b>, an{" "}
+                    <b>AI-powered Resume Shortlister</b>, a{" "}
+                    <b> Video Progress Tracker</b>, and a{" "}
+                    <b> Hospital Management System</b>. My focus has always been
+                    on writing clean, maintainable code while delivering
+                    impactful and user-friendly solutions.
+                  </p>
+
+                  <p>
+                    Beyond coding, I love exploring <b>new technologies</b> like
+                    Next.js, LangChain, and cloud platforms. With a strong{" "}
+                    <b>continuous learning attitude</b>, I focus on improving my{" "}
+                    <b>DSA, system design</b>, and mentoring others in
+                    programming. My long-term goal is to build impactful{" "}
+                    <b>AI-driven SaaS products</b> that solve real-world
+                    challenges in <b>education, healthcare, and employment</b>,
+                    while guiding future developers.
+                  </p>
+                </div>
+
+                {/* Info Section */}
+                <div className="flex items-center space-x-6 mt-6 text-sm text-gray-500 dark:text-gray-400 clear-left">
+                  <div className="flex items-center space-x-2">
+                    <MapPin className="w-4 h-4" />
+                    <span>Gorakhpur, India - 273010</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <Calendar className="w-4 h-4" />
+                    <span>Available for opportunities</span>
+                  </div>
+                </div>
+
+                {/* Tech Stack */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.3 }}
+                  className="mt-8 flex flex-wrap gap-3">
+                  {[
+                    "Data Structure & Algorithm",
+                    "JavaScript",
+                    "TypeScript",
+                    "React",
+                    "Node.js",
+                    "MongoDB",
+                    "AWS",
+                    "C/C++",
+                    "Java",
+                    "Cloud Computing",
+                    "GenAi",
+                    "Ai/Ml"
+                  ].map((tech) => (
+                    <motion.span
+                      key={tech}
+                      whileHover={{ scale: 1.1 }}
+                      className="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-medium">
+                      {tech}
+                    </motion.span>
+                  ))}
+                </motion.div>
               </div>
             </div>
 
@@ -371,7 +483,7 @@ const About = () => {
                         {item.description && (
                           <div>
                             <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">
-                              Description : 
+                              Description :
                             </span>{" "}
                             <span className="text-gray-900 dark:text-white">
                               {item.description}

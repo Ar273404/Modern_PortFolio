@@ -65,12 +65,34 @@ router.post(
   upload.single("image"),
   async (req, res) => {
     try {
+      let techs = req.body.technologies;
+
+      // If frontend sends array → keep as array
+      if (Array.isArray(techs)) {
+        // nothing to do
+      } else if (typeof techs === "string") {
+        // Try parse as JSON string
+        try {
+          techs = JSON.parse(techs);
+        } catch {
+          // If plain comma-separated string → split manually
+          techs = techs.split(",").map((t) => t.trim());
+        }
+      } else {
+        techs = [];
+      }
+      // const projectData = {
+      //   ...req.body,
+      //   technologies: JSON.parse(req.body.technologies || "[]"),
+      //   image: req.file ? req.file.path : req.body.image,
+      // };
+
       const projectData = {
         ...req.body,
-        technologies: JSON.parse(req.body.technologies || "[]"),
+        technologies: techs,
         image: req.file ? req.file.path : req.body.image,
       };
-
+     console.log(projectData);
       const project = new Project(projectData);
       await project.save();
 

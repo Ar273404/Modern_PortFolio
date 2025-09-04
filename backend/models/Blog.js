@@ -10,7 +10,8 @@ const blogSchema = new mongoose.Schema(
     slug: {
       type: String,
       unique: true,
-      required: true,
+      required: false,
+      default:null,
     },
     excerpt: {
       type: String,
@@ -44,7 +45,8 @@ const blogSchema = new mongoose.Schema(
     },
     readTime: {
       type: Number,
-      required: true,
+      required: false,
+      default:null
     },
     views: {
       type: Number,

@@ -1,13 +1,17 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Calendar, Clock, ArrowRight, Search, Tag } from "lucide-react";
+import { Calendar, Clock, ArrowRight, Search, Tag} from "lucide-react";
 import { useApi } from "../hooks/useApi";
 import { BlogPost } from "../types";
+// import DynamicModal from "./DynamicModal";
 
 const Blog = () => {
   const { data: blogs, loading } = useApi<BlogPost[]>("/blogs");
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedTag, setSelectedTag] = useState<string>("All");
+  // const [showModal, setShowModal] = useState(false);
+
+
 
   const allTags = [
     "All",
@@ -25,7 +29,7 @@ const Blog = () => {
     }) || [];
 
   return (
-    <section id="blog" className="py-20 bg-white dark:bg-gray-900">
+    <section id="blog" className="py-20 bg-white dark:bg-gray-900 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -181,6 +185,8 @@ const Blog = () => {
           </motion.div>
         )}
       </div>
+
+      
     </section>
   );
 };
