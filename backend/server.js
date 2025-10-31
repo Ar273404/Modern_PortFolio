@@ -67,6 +67,7 @@ app.use("/api/", limiter);
 const allowedOrigins = [
   process.env.Frontend_url,
   "https://modern-portfolio-2.onrender.com",
+  "https://modern-portfolio-2.onrender.com/admin",
   "http://localhost:5173",
   "http://localhost:3000",
   

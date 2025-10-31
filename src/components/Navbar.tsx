@@ -57,7 +57,7 @@ const Navbar = () => {
             <div className="flex items-center space-x-4">
               {/* Admin Button */}
               <motion.a
-                href="http://localhost:5173/admin"
+                href="https://modern-portfolio-2.onrender.com/admin"
                 whileHover={{ scale: 1.05, x: 5 }}
                 whileTap={{ scale: 0.95 }}
                 className="flex items-center space-x-2 bg-gradient-to-r from-purple-600 to-pink-600 
