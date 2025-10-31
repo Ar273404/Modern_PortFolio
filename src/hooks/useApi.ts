@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const API_BASE_URL =  "http://localhost:8080" ;
+const API_BASE_URL =  "https://modern-portfolio-1-zcnj.onrender.com" ;
 // import.meta.env.VITE_API_URL ||
 
 // Create axios instance with default config
