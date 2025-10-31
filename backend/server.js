@@ -260,12 +260,16 @@ app.use((error, req, res, next) => {
   });
 });
 
-// 404 Handler
+
+const PORT = process.env.PORT || 8080;
+app.get("/", (req, res) => {
+  res.send("this is backend");
+});
+
+// ✅ 404 Handler — keep only one
 app.use("*", (req, res) => {
   res.status(404).json({ message: "API endpoint not found" });
 });
-
-const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
